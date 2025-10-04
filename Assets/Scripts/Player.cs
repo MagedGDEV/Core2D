@@ -3,6 +3,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
+    [SerializeField] private int health = 20;
+    [SerializeField] private float recoveryCounter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
             Input.GetAxis("Vertical"),
             0
         ) * speed * Time.deltaTime;
+        recoveryCounter += Time.deltaTime;
 
         if (transform.position.x > 8.35)
         {
@@ -25,6 +28,7 @@ public class Player : MonoBehaviour
                 transform.position.y,
                 0
             );
+            Hurt();
         }
         else if (transform.position.x < -8.35)
         {
@@ -33,6 +37,7 @@ public class Player : MonoBehaviour
                 transform.position.y,
                 0
             );
+            Hurt();
         }
         else if (transform.position.y > 4.5)
         {
@@ -41,6 +46,7 @@ public class Player : MonoBehaviour
                 4.5f,
                 0
             );
+            Hurt();
         }
         else if (transform.position.y < -4.5)
         {
@@ -49,6 +55,18 @@ public class Player : MonoBehaviour
                 -4.5f,
                 0
             );
+            Hurt();
         }
+    }
+
+    void Hurt()
+    {
+        if (recoveryCounter > 2)
+        {
+            health -= 1;
+            recoveryCounter = 0;
+            Debug.Log("Health: " + health);
+        }
+
     }
 }
