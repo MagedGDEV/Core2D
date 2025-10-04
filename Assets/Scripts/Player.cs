@@ -13,10 +13,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(
-            speed * Time.deltaTime,
-            0,
+            Input.GetAxis("Horizontal"),
+            Input.GetAxis("Vertical"),
             0
-        );
+        ) * speed * Time.deltaTime;
 
         if (transform.position.x > 8.35)
         {
