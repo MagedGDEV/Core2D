@@ -372,6 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e9cb231c8694cedbee79dcede9f5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  speed: 5
+  health: 20
+  recoveryCounter: 0
 --- !u!65 &1560419095
 BoxCollider:
   m_ObjectHideFlags: 0
