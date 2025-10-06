@@ -1883,7 +1883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   minGroundNormalY: 0.65
   gravityModifier: 1
-  speed: 4
+  speed: 7
 --- !u!1001 &1329808070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2775,6 +2775,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2053641938}
   - {fileID: 619394802}
+  - {fileID: 1295486757}
   - {fileID: 3904033914628345063}
   - {fileID: 286277838}
   - {fileID: 115041013}
@@ -2811,4 +2812,3 @@ SceneRoots:
   - {fileID: 234892988}
   - {fileID: 1433092002}
   - {fileID: 2022702703}
-  - {fileID: 1295486757}
