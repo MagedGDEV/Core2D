@@ -103,8 +103,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3852
-      y: 4
+      x: 4
+      y: 442
       width: 90
       height: 220
     spriteID: eb662262f0e1d44019d95a3701976d45
@@ -115,7 +115,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3852, y: 4}
+    uvTransform: {x: 4, y: 442}
     spritePosition: {x: 1756, y: 1295}
   - name: Ground1
     originalName: 
@@ -126,7 +126,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2172
+      y: 4
       width: 471
       height: 430
     spriteID: f56fd9dbb93d44867af7dfd9caff28cf
@@ -137,30 +137,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2172}
-    spritePosition: {x: 1685, y: 865}
-  - name: Background
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 3840
-      height: 2160
-    spriteID: 175d0e1fb6126410884a409b8dd7ffba
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
+    spritePosition: {x: 1685, y: 865}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -214,7 +192,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: eb662262f0e1d44019d95a3701976d45
     layerID: 3
-    mosaicPosition: {x: 3852, y: 4}
+    mosaicPosition: {x: 4, y: 442}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -224,7 +202,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: f56fd9dbb93d44867af7dfd9caff28cf
     layerID: 2
-    mosaicPosition: {x: 4, y: 2172}
+    mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -236,8 +214,8 @@ ScriptedImporter:
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   mosaicPSDLayers: []
   rigPSDLayers: []
   sharedRigPSDLayers: []
