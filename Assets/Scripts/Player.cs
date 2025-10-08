@@ -5,6 +5,7 @@ public class Player : PhysicsObject
 {
     [SerializeField] private float speed = 4;
     [SerializeField] private float jumpPower = 12;
+    public int coinsCollected = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

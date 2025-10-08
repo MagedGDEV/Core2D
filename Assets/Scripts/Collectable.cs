@@ -16,9 +16,14 @@ public class Collectable : MonoBehaviour
 
     }
 
+    // Triggered when collision detected with this game object
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (GameObject.Find("Player"))
-            Debug.Log("Player touched me");
+        GameObject player = GameObject.Find("Player");
+        if (player != null)
+        {
+            player.GetComponent<Player>().coinsCollected++;
+            Destroy(gameObject); // gameObject similar to this
+        }
     }
 }
