@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collectable : MonoBehaviour
@@ -17,12 +18,12 @@ public class Collectable : MonoBehaviour
     }
 
     // Triggered when collision detected with this game object
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject player = GameObject.Find("Player");
-        if (player != null)
+        if (collision.gameObject.name == "Player")
         {
-            player.GetComponent<Player>().coinsCollected++;
+
+            GameObject.Find("Player").GetComponent<Player>().coinsCollected++;
             Destroy(gameObject); // gameObject similar to this
         }
     }
