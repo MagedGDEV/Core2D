@@ -24,6 +24,7 @@ public class Collectable : MonoBehaviour
         {
 
             GameObject.Find("Player").GetComponent<Player>().coinsCollected++;
+            GameObject.Find("Player").GetComponent<Player>().UpdateUI();
             Destroy(gameObject); // gameObject similar to this
         }
     }

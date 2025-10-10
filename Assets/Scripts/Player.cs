@@ -1,15 +1,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : PhysicsObject
 {
     [SerializeField] private float speed = 4;
     [SerializeField] private float jumpPower = 12;
     public int coinsCollected = 0;
+    public Text coinsText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        coinsText = GameObject.Find("Coins").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -19,5 +21,10 @@ public class Player : PhysicsObject
 
         if (Input.GetButtonDown("Jump") && grounded)
             velocity.y = jumpPower;
+    }
+
+    public void UpdateUI()
+    {
+        coinsText.text = coinsCollected.ToString();
     }
 }
