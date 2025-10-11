@@ -5039,7 +5039,7 @@ MonoBehaviour:
   speed: 8
   jumpPower: 12
   coinsCollected: 0
-  coinsText: {fileID: 0}
+  coinsText: {fileID: 1900231295}
 --- !u!4 &1299579474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6195396441236454070, guid: 132cf4ff2639640739ee6f0bd471ffeb, type: 3}

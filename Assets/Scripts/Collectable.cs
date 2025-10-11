@@ -23,8 +23,9 @@ public class Collectable : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
 
-            GameObject.Find("Player").GetComponent<Player>().coinsCollected++;
-            GameObject.Find("Player").GetComponent<Player>().UpdateUI();
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            player.coinsCollected++;
+            player.UpdateUI();
             Destroy(gameObject); // gameObject similar to this
         }
     }
