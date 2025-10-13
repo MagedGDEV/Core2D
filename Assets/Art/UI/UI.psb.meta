@@ -99,14 +99,14 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 10, y: 5, z: 10, w: 26}
+    border: {x: 10, y: 2, z: 10, w: 2}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 2172
+      y: 2171
       width: 720
-      height: 40
+      height: 22
     spriteID: 2ddaab60bbab64664948ecafc5a4a0af
     spriteBone: []
     spriteOutline: []
