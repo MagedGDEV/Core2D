@@ -1,10 +1,11 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
     enum ItemType { Coin, Health, Ammo, Inventory }
     [SerializeField] private ItemType itemType;
+    [SerializeField] private Sprite inventorySprite;
+    [SerializeField] private string inventoryName;
     private Player player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,14 +25,19 @@ public class Collectable : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            if (itemType == ItemType.Coin)
-                player.coinsCollected++;
-            else if (itemType == ItemType.Health)
+            switch (itemType)
             {
-                if (player.health < 100)
-                    player.health+=5;
+                case ItemType.Coin:
+                    player.coinsCollected++;
+                    break;
+                case ItemType.Health:
+                    if (player.health < 100)
+                        player.health+=5;
+                    break;
+                case ItemType.Inventory:
+                    player.AddInventoryItem(inventoryName, inventorySprite);
+                    break;
             }
-
             player.UpdateUI();
             Destroy(gameObject); // gameObject similar to this
         }
