@@ -1,28 +1,41 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Player : PhysicsObject
 {
     [SerializeField] private float speed = 4;
     [SerializeField] private float jumpPower = 12;
+
     private Vector2 healthBarOrgSize;
-    private Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
     private int maxHealth = 100;
+
+    public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
     public int health = 50;
     public int coinsCollected = 0;
     public Text coinsText;
     public Image healthBar;
     public Image inventoryItemImage;
     public Sprite inventoryBlank;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private static Player instance;
+    public static Player Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindAnyObjectByType<Player>();
+            return instance;
+        }
+    }
+
     void Start()
     {
         healthBarOrgSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
     }
 
-    // Update is called once per frame
     void Update()
     {
         targetVelocity.x = Input.GetAxis("Horizontal") * speed;
