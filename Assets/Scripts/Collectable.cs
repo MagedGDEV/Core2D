@@ -12,7 +12,7 @@ public class Collectable : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = Player.Instance;
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject == player.gameObject)
         {
             switch (itemType)
             {

@@ -8,7 +8,7 @@ public class Gate : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = Player.Instance;
     }
 
     void Update()
@@ -18,7 +18,7 @@ public class Gate : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" && player.inventory.ContainsKey(requiredInventoryItem))
+        if (collision.gameObject == player.gameObject && player.inventory.ContainsKey(requiredInventoryItem))
         {
             player.RemoveInventoryItem(requiredInventoryItem);
             Destroy(gameObject);   
