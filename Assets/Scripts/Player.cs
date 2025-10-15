@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Player : PhysicsObject
@@ -17,6 +18,17 @@ public class Player : PhysicsObject
     public Image healthBar;
     public Image inventoryItemImage;
     public Sprite inventoryBlank;
+
+    private static Player instance;
+    public static Player Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindAnyObjectByType<Player>();
+            return instance;
+        }
+    }
 
     void Start()
     {
