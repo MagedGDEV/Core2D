@@ -2426,7 +2426,7 @@ GameObject:
   - component: {fileID: 478155177}
   - component: {fileID: 478155178}
   m_Layer: 0
-  m_Name: Layer -1
+  m_Name: Parallax Layer -1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4170,7 +4170,7 @@ GameObject:
   - component: {fileID: 851999010}
   - component: {fileID: 851999011}
   m_Layer: 0
-  m_Name: Layers
+  m_Name: Parallax Layers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4343,7 +4343,7 @@ GameObject:
   - component: {fileID: 897351412}
   - component: {fileID: 897351413}
   m_Layer: 0
-  m_Name: Layer 2
+  m_Name: Parallax Layer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4690,7 +4690,7 @@ GameObject:
   - component: {fileID: 1007291216}
   - component: {fileID: 1007291217}
   m_Layer: 0
-  m_Name: Layer -2
+  m_Name: Parallax Layer -2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6703,7 +6703,7 @@ GameObject:
   - component: {fileID: 1577573626}
   - component: {fileID: 1577573627}
   m_Layer: 0
-  m_Name: Layer 1
+  m_Name: Parallax Layer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
