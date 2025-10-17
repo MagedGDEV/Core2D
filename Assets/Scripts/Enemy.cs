@@ -13,6 +13,8 @@ public class Enemy : PhysicsObject
     [SerializeField] private Vector2 rayCastOffset = new Vector2(1, 0);
     [SerializeField] private int ledgeDistance = 1;
 
+    public int health = 100;
+
     void Start()
     {
 
@@ -98,6 +100,8 @@ public class Enemy : PhysicsObject
                 direction = 1;
         }
 
+        if (health <= 0)
+            Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
