@@ -571,7 +571,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3009051005541384398, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3081996342063600685, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: m_Name
@@ -5936,7 +5936,7 @@ MonoBehaviour:
   speed: 8
   jumpPower: 12
   attackDuration: 0.1
-  health: 50
+  health: 100
   coinsCollected: 0
   attackPower: 25
   coinsText: {fileID: 1900231295}
@@ -7227,7 +7227,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3009051005541384398, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3081996342063600685, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: m_Name
@@ -7350,7 +7350,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3009051005541384398, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3081996342063600685, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: m_Name
@@ -7791,7 +7791,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3009051005541384398, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3081996342063600685, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: m_Name
@@ -7981,7 +7981,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3009051005541384398, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3081996342063600685, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: m_Name
@@ -8439,7 +8439,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3009051005541384398, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3081996342063600685, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: m_Name
@@ -9404,7 +9404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3009051005541384398, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3081996342063600685, guid: 0947088a57bc5451b8de7748e7be8609, type: 3}
       propertyPath: m_Name
