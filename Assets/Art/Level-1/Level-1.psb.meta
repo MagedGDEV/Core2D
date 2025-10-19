@@ -95,6 +95,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
+  - name: White pixel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 3926
+      y: 351
+      width: 13
+      height: 12
+    spriteID: cdc2132bc2dc34b3bad71e8a3cf834e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3926, y: 351}
+    spritePosition: {x: 1925, y: 1331}
   - name: Enemy
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -274,6 +296,16 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
+  - name: White pixel
+    spriteName: White pixel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cdc2132bc2dc34b3bad71e8a3cf834e5
+    layerID: 24
+    mosaicPosition: {x: 3926, y: 351}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Enemy
     spriteName: Enemy
     isGroup: 0
