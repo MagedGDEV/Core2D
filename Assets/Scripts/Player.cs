@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : PhysicsObject
@@ -52,18 +54,26 @@ public class Player : PhysicsObject
             transform.localScale = new Vector2(1, 1);
         else if (targetVelocity.x < -0.01)
             transform.localScale = new Vector2(-1, 1);
-        
+
         if (Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(attack());
+            StartCoroutine(Attack());
         }
+
+        if (health <= 0)
+            Die();
     }
 
-    private IEnumerator attack()
+    private IEnumerator Attack()
     {
         attackBox.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false);
+    }
+
+    private void Die()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void UpdateUI()
