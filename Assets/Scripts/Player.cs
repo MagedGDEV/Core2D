@@ -38,17 +38,16 @@ public class Player : PhysicsObject
 
     void Awake()
     {
-
         if (GameObject.Find("New Player"))
-            Destroy(gameObject);
-            
+            Destroy(gameObject);  
     }
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
         gameObject.name = "New Player";
-
+        Spawn();
+        
         healthBarOrgSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
     }
@@ -73,6 +72,11 @@ public class Player : PhysicsObject
 
         if (health <= 0)
             Die();
+    }
+
+    public void Spawn()
+    {
+        gameObject.transform.position = GameObject.Find("Spawn Location").transform.position;
     }
 
     private IEnumerator Attack()
