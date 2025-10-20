@@ -1,30 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Player : PhysicsObject
 {
-    [SerializeField] private float speed = 4;
-    [SerializeField] private float jumpPower = 12;
+    [Header("Attributes")]
     [SerializeField] private float attackDuration = 0.1f;
-    
-
-    private Vector2 healthBarOrgSize;
-    private int maxHealth = 100;
-
-    public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
-    public int health = 50;
-    public int coinsCollected = 0;
     public int attackPower = 25;
-    public Text coinsText;
-    public Image healthBar;
-    public Image inventoryItemImage;
-    public Sprite inventoryBlank;
-    [SerializeField] private GameObject attackBox;
+    public int coinsCollected = 0;
+    public int health = 50;
+    [SerializeField] private float jumpPower = 12;
+    private int maxHealth = 100;
+    [SerializeField] private float speed = 4;
 
+    [Header("References")]
+    [SerializeField] private GameObject attackBox;
+    private Vector2 healthBarOrgSize;
+    public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
+    public Sprite inventoryBlank;
+    
     private static Player instance;
     public static Player Instance
     {
@@ -48,7 +43,7 @@ public class Player : PhysicsObject
         gameObject.name = "New Player";
         Spawn();
         
-        healthBarOrgSize = healthBar.rectTransform.sizeDelta;
+        healthBarOrgSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;
         UpdateUI();
     }
 
@@ -89,26 +84,27 @@ public class Player : PhysicsObject
     private void Die()
     {
         SceneManager.LoadScene("Level1");
+        health = 100;
     }
 
     public void UpdateUI()
     {
-        coinsText.text = coinsCollected.ToString();
-        healthBar.rectTransform.sizeDelta = new Vector2(
+        GameManager.Instance.coinsText.text = coinsCollected.ToString();
+        GameManager.Instance.healthBar.rectTransform.sizeDelta = new Vector2(
             (float)health / maxHealth * healthBarOrgSize.x,
-            healthBar.rectTransform.sizeDelta.y
+            GameManager.Instance.healthBar.rectTransform.sizeDelta.y
         );
     }
 
     public void AddInventoryItem(string name, Sprite image)
     {
         inventory.Add(name, image);
-        inventoryItemImage.sprite = image;
+        GameManager.Instance.inventoryItemImage.sprite = image;
     }
     
     public void RemoveInventoryItem(string name)
     {
         inventory.Remove(name);
-        inventoryItemImage.sprite = inventoryBlank;
+        GameManager.Instance.inventoryItemImage.sprite = inventoryBlank;
     }
 }
