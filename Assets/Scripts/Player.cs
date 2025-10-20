@@ -73,7 +73,7 @@ public class Player : PhysicsObject
 
     private void Die()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     public void UpdateUI()
