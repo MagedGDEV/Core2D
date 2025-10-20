@@ -21,6 +21,7 @@ public class SceneLoadTrigger : MonoBehaviour
         if (collision.gameObject == Player.Instance.gameObject)
         {
             SceneManager.LoadScene(loadSceneName);
+            Player.Instance.Spawn();
         }    
     }
 }
