@@ -7,11 +7,11 @@ public class SceneCamera : MonoBehaviour
 
     void Start()
     {
-        
+        cinemachineCamera.Follow = Player.Instance.gameObject.transform;
     }
 
     void Update()
     {
-        cinemachineCamera.Follow = Player.Instance.gameObject.transform;
+        
     }
 }
