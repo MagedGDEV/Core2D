@@ -36,8 +36,19 @@ public class Player : PhysicsObject
         }
     }
 
+    void Awake()
+    {
+
+        if (GameObject.Find("New Player"))
+            Destroy(gameObject);
+            
+    }
+
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+        gameObject.name = "New Player";
+
         healthBarOrgSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
     }
