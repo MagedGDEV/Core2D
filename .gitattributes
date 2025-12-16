@@ -1,1 +1,2 @@
 *.assets binary
+*.psb filter=lfs diff=lfs merge=lfs -text
