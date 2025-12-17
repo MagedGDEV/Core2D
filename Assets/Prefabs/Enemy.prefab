@@ -82,8 +82,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -443405848527560683, guid: 9b8a3c65f005d4bd7893aea1ecda6e6f, type: 3}
-  m_Color: {r: 1, g: 0.023584902, b: 0.50441235, a: 1}
+  m_Sprite: {fileID: 6228892578063309564, guid: b411204eb1ce74783ad15523d4b7f6bf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,11 +109,13 @@ MonoBehaviour:
   gravityModifier: 1
   speed: 2
   direction: -1
+  attackPower: 1
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1
   rayCastOffset: {x: 1, y: 0}
   ledgeDistance: 1
+  health: 100
 --- !u!50 &1909542346906638802
 Rigidbody2D:
   serializedVersion: 5
