@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class Enemy : PhysicsObject
 {
-    [SerializeField] private float speed = 2;
+    [SerializeField] private float maxSpeed = 2;
     [SerializeField] private int direction = 1;
     [SerializeField] private int attackPower = 1;
-    [SerializeField] private LayerMask raycastLayerMask;
-    [SerializeField] private RaycastHit2D rightLedgeRay;
-    [SerializeField] private RaycastHit2D rightWallRay;
-    [SerializeField] private RaycastHit2D leftLedgeRay;
-    [SerializeField] private RaycastHit2D leftWallRay;
+    [SerializeField] private LayerMask rayCastLayerMask;
+    [SerializeField] private RaycastHit2D rightLedgeRaycastHit;
+    [SerializeField] private RaycastHit2D rightWallRaycastHit;
+    [SerializeField] private RaycastHit2D leftLedgeRaycastHit;
+    [SerializeField] private RaycastHit2D leftWallRaycastHit;
     [SerializeField] private Vector2 rayCastOffset = new Vector2(1, 0);
-    [SerializeField] private int ledgeDistance = 1;
+    [SerializeField] private float rayCastLength = 2;
 
     public int health = 100;
 
@@ -22,83 +22,89 @@ public class Enemy : PhysicsObject
 
     void Update()
     {
-        targetVelocity.x = direction * speed;
-        if (direction == 1)
-        {
-            rightLedgeRay = Physics2D.Raycast(
-                new Vector2(
-                    transform.position.x + rayCastOffset.x,
-                    transform.position.y
-                ),
-                Vector2.down,
-                ledgeDistance
-            );
-            Debug.DrawRay(
-                new Vector2(
-                    transform.position.x + rayCastOffset.x,
-                    transform.position.y
-                ),
-                Vector2.down * ledgeDistance,
-                Color.red
-            );
-            rightWallRay = Physics2D.Raycast(
-                new Vector2(
-                    transform.position.x,
-                    transform.position.y
-                ),
-                Vector2.right,
-                ledgeDistance,
-                raycastLayerMask
-            );
-            Debug.DrawRay(
-                new Vector2(
-                    transform.position.x,
-                    transform.position.y
-                ),
-                Vector2.right * ledgeDistance,
-                Color.yellow
-            );
-            if (rightLedgeRay.collider == null || rightWallRay.collider != null)
-                direction = -1;
-        }
-        else
-        {
-            leftLedgeRay = Physics2D.Raycast(
-                new Vector2(
-                    transform.position.x - rayCastOffset.x,
-                    transform.position.y
-                ),
-                Vector2.down,
-                ledgeDistance
-            );
-            Debug.DrawRay(
-                new Vector2(
-                    transform.position.x - rayCastOffset.x,
-                    transform.position.y
-                ),
-                Vector2.down * ledgeDistance,
-                Color.red
-            );
-            leftWallRay = Physics2D.Raycast(
-                new Vector2(
-                    transform.position.x,
-                    transform.position.y
-                ),
-                Vector2.left,
-                ledgeDistance,
-                raycastLayerMask
-            );
-            Debug.DrawRay(
-                new Vector2(
-                    transform.position.x,
-                    transform.position.y
-                ),
-                Vector2.left * ledgeDistance,
-                Color.yellow
-            );
-            if (leftLedgeRay.collider == null || leftWallRay.collider != null)
-                direction = 1;
-        }
+        targetVelocity = new Vector2(maxSpeed * direction, 0);
+
+        //Check for right ledge!
+        rightLedgeRaycastHit = Physics2D.Raycast(
+            new Vector2(
+                transform.position.x + rayCastOffset.x,
+                transform.position.y + rayCastOffset.y
+            ),
+            Vector2.down,
+            rayCastLength
+        );
+        Debug.DrawRay(
+            new Vector2(
+                transform.position.x + rayCastOffset.x,
+                transform.position.y + rayCastOffset.y
+            ), 
+            Vector2.down * rayCastLength,
+            Color.blue
+        );
+        if (rightLedgeRaycastHit.collider == null) 
+            direction = -1;
+
+        //Check for left ledge!
+        leftLedgeRaycastHit = Physics2D.Raycast(
+            new Vector2(
+                transform.position.x - rayCastOffset.x, 
+                transform.position.y + rayCastOffset.y
+            ), 
+            Vector2.down,
+            rayCastLength
+        );
+        Debug.DrawRay(
+            new Vector2(
+                transform.position.x - rayCastOffset.x, 
+                transform.position.y + rayCastOffset.y
+            ), 
+            Vector2.down * rayCastLength, 
+            Color.green
+        );
+        if (leftLedgeRaycastHit.collider == null) 
+            direction = 1;
+
+        //Check for right wall!
+        rightWallRaycastHit = Physics2D.Raycast(
+            new Vector2(
+                transform.position.x + 0.5f, 
+                transform.position.y + rayCastOffset.y
+            ), 
+            Vector2.right, 
+            rayCastLength, 
+            rayCastLayerMask
+        );
+        Debug.DrawRay(
+            new Vector2(
+                transform.position.x + 0.3f, 
+                transform.position.y + rayCastOffset.y
+            ), 
+            Vector2.right * rayCastLength, 
+            Color.red
+        );
+        if (rightWallRaycastHit.collider != null) 
+            direction = -1;
+
+        //Check for left wall!
+        leftWallRaycastHit = Physics2D.Raycast(
+            new Vector2(
+                transform.position.x - 0.5f, 
+                transform.position.y + rayCastOffset.y
+            ), 
+            Vector2.left, 
+            rayCastLength, 
+            rayCastLayerMask
+        );
+        Debug.DrawRay(
+            new Vector2(
+                transform.position.x - 0.3f,
+                transform.position.y + rayCastOffset.y
+            ),
+            Vector2.left * rayCastLength,
+            Color.magenta
+        );
+        if (leftWallRaycastHit.collider != null) 
+            direction = 1;
 
         if (health <= 0)
             Destroy(gameObject);

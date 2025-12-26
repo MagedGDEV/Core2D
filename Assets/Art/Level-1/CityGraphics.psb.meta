@@ -32,7 +32,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -258,9 +258,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 8105
-      y: 3795
+      y: 3797
       width: 38
-      height: 102
+      height: 98
     spriteID: b93c62970092a480dbf629652e3ff66c
     spriteBone: []
     spriteOutline: []
@@ -565,10 +565,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4389
-      y: 4327
-      width: 558
-      height: 556
+      x: 4392
+      y: 4328
+      width: 550
+      height: 548
     spriteID: 4e70dc631019342e488f7a8a7c719297
     spriteBone: []
     spriteOutline: []
@@ -587,10 +587,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4949
-      y: 4327
-      width: 558
-      height: 556
+      x: 4950
+      y: 4328
+      width: 550
+      height: 549
     spriteID: c51726d1d2c034971b64fa797f167aa7
     spriteBone: []
     spriteOutline: []
