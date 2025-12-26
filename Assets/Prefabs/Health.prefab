@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5494218631380548908}
   - component: {fileID: 6219586666300514930}
   - component: {fileID: 8143795237946453454}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3113620622131842338, guid: 9b8a3c65f005d4bd7893aea1ecda6e6f, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.3146515, a: 1}
+  m_Sprite: {fileID: -4454418193828944683, guid: b411204eb1ce74783ad15523d4b7f6bf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.39, y: 0.39}
+    oldSize: {x: 1.25, y: 1.21}
     newSize: {x: 0.39, y: 0.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -151,3 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectable
   itemType: 1
+  inventorySprite: {fileID: 0}
+  inventoryName: 
