@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class Player : PhysicsObject
     private Vector2 healthBarOrgSize;
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
     public Sprite inventoryBlank;
+    [SerializeField] private Animator animator;
     
     private static Player instance;
     public static Player Instance
@@ -64,6 +66,9 @@ public class Player : PhysicsObject
         {
             StartCoroutine(Attack());
         }
+
+        animator.SetFloat("velocityX", Math.Abs(velocity.x) / speed);
+        animator.SetFloat("velocityY", velocity.y);
 
         if (health <= 0)
             Die();
