@@ -69,6 +69,7 @@ public class Player : PhysicsObject
 
         animator.SetFloat("velocityX", Math.Abs(velocity.x) / speed);
         animator.SetFloat("velocityY", velocity.y);
+        animator.SetBool("grounded", grounded);
 
         if (health <= 0)
             Die();
