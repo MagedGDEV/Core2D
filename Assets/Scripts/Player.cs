@@ -82,6 +82,7 @@ public class Player : PhysicsObject
 
     private IEnumerator Attack()
     {
+        animator.SetTrigger("attack");
         attackBox.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false);
