@@ -64,11 +64,13 @@ public class Player : PhysicsObject
 
         if (Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(Attack());
+            animator.SetTrigger("attack");
+            //StartCoroutine(Attack());
         }
 
         animator.SetFloat("velocityX", Math.Abs(velocity.x) / speed);
         animator.SetFloat("velocityY", velocity.y);
+        animator.SetFloat("attackDirectionY", Input.GetAxis("Vertical"));
         animator.SetBool("grounded", grounded);
 
         if (health <= 0)
@@ -82,7 +84,7 @@ public class Player : PhysicsObject
 
     private IEnumerator Attack()
     {
-        animator.SetTrigger("attack");
+        
         attackBox.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false);
