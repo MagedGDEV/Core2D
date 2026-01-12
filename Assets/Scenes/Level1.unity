@@ -3721,7 +3721,7 @@ MonoBehaviour:
   sound5Volume: 0.02
   sound6:
   - {fileID: 8300000, guid: 198e7e60462194dd6a0dafa49b2e3dc4, type: 3}
-  sound6Volume: 0.6
+  sound6Volume: 0.2
   sound7: []
   sound7Volume: 1
   sound8: []
