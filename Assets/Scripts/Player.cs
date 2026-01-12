@@ -21,6 +21,9 @@ public class Player : PhysicsObject
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
     public Sprite inventoryBlank;
     [SerializeField] private Animator animator;
+    public AudioSource sfxAudioSource;
+    public AudioSource musicAudioSource;
+    public AudioSource ambienceAudioSource;
     
     private static Player instance;
     public static Player Instance
