@@ -153,3 +153,5 @@ MonoBehaviour:
   itemType: 0
   inventorySprite: {fileID: -3113620622131842338, guid: 9b8a3c65f005d4bd7893aea1ecda6e6f, type: 3}
   inventoryName: 
+  collectableSound: {fileID: 8300000, guid: a56fc866ceb3e49b7958efd430049343, type: 3}
+  collectableSoundVolume: 0.1

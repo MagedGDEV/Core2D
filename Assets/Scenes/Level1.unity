@@ -3702,16 +3702,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78705b263ffa54727b56f36d818cd8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimatorFunctions
-  sound1: []
-  sound1Volume: 1
-  sound2: []
-  sound2Volume: 1
-  sound3: []
-  sound3Volume: 1
-  sound4: []
-  sound4Volume: 1
-  sound5: []
-  sound5Volume: 1
+  sound1:
+  - {fileID: 8300000, guid: def22ce97dc3f41bda43f7520ec1bb2d, type: 3}
+  sound1Volume: 0.1
+  sound2:
+  - {fileID: 8300000, guid: 0e64e9b9e4daa4805ba66582f4fb6059, type: 3}
+  sound2Volume: 0.1
+  sound3:
+  - {fileID: 8300000, guid: 74f4b117d50364f819c1905a428efe02, type: 3}
+  sound3Volume: 0.1
+  sound4:
+  - {fileID: 8300000, guid: 0c8c1145f2251454bac0a69baaad3490, type: 3}
+  sound4Volume: 0.04
+  sound5:
+  - {fileID: 8300000, guid: ccfd3ade4fe504467a6427ba955b682b, type: 3}
+  - {fileID: 8300000, guid: 7bea2ca4b16984c6dabad4e2a6eed557, type: 3}
+  - {fileID: 8300000, guid: d92b17833a903445dba833a0c319a35f, type: 3}
+  sound5Volume: 0.02
   sound6: []
   sound6Volume: 1
   sound7: []

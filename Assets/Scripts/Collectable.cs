@@ -7,37 +7,29 @@ public class Collectable : MonoBehaviour
     [SerializeField] private ItemType itemType;
     [SerializeField] private Sprite inventorySprite;
     [SerializeField] private string inventoryName;
-
-    private Player player;
-
-    void Start()
-    {
-        player = Player.Instance;
-    }
-
-    void Update()
-    {
-
-    }
+    [SerializeField] private AudioClip collectableSound;
+    [SerializeField] private float collectableSoundVolume = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == player.gameObject)
+        if (collision.gameObject == Player.Instance.gameObject)
         {
+            if (collectableSound != null) 
+                Player.Instance.sfxAudioSource.PlayOneShot(collectableSound, collectableSoundVolume * Random.Range(0.8f, 1.4f));
             switch (itemType)
             {
                 case ItemType.Coin:
-                    player.coinsCollected++;
+                    Player.Instance.coinsCollected++;
                     break;
                 case ItemType.Health:
-                    if (player.health < 100)
-                        player.health+=5;
+                    if (Player.Instance.health < 100)
+                        Player.Instance.health+=5;
                     break;
                 case ItemType.Inventory:
-                    player.AddInventoryItem(inventoryName, inventorySprite);
+                    Player.Instance.AddInventoryItem(inventoryName, inventorySprite);
                     break;
             }
-            player.UpdateUI();
+            Player.Instance.UpdateUI();
             Destroy(gameObject);
         }
     }
