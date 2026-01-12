@@ -123,8 +123,7 @@ public class Enemy : PhysicsObject
     {
         if (collision.gameObject == Player.Instance.gameObject)
         {
-            Player.Instance.health -= attackPower;
-            Player.Instance.UpdateUI();
+            Player.Instance.Hurt(attackPower);
         }
     }
 }

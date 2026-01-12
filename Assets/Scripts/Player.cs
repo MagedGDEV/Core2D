@@ -119,4 +119,11 @@ public class Player : PhysicsObject
         inventory.Remove(name);
         GameManager.Instance.inventoryItemImage.sprite = inventoryBlank;
     }
+
+    public void Hurt(int attackPower)
+    {
+        animator.SetTrigger("hurt");
+        health -= attackPower;
+        UpdateUI();
+    }
 }
