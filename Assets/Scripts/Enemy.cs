@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Enemy : PhysicsObject
 {
+    public int health = 100;
     [SerializeField] private float maxSpeed = 2;
     [SerializeField] private int direction = 1;
     [SerializeField] private int attackPower = 1;
@@ -13,12 +14,11 @@ public class Enemy : PhysicsObject
     [SerializeField] private Vector2 rayCastOffset = new Vector2(1, 0);
     [SerializeField] private float rayCastLength = 2;
 
-    public int health = 100;
-
-    void Start()
-    {
-
-    }
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private float hurtSoundVolume = 1;
+    [SerializeField] private float deathSoundVolume = 1;
 
     void Update()
     {
@@ -107,15 +107,23 @@ public class Enemy : PhysicsObject
             direction = 1;
 
         if (health <= 0)
-            Destroy(gameObject);
+        {
+            Player.Instance.sfxAudioSource.PlayOneShot(deathSound, deathSoundVolume);
+            Destroy(gameObject); 
+        }
+    }
+
+    public void Hurt()
+    {
+        Player.Instance.sfxAudioSource.PlayOneShot(hurtSound, hurtSoundVolume);
+        health -= Player.Instance.attackPower;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == Player.Instance.gameObject)
         {
-            Player.Instance.health -= attackPower;
-            Player.Instance.UpdateUI();
+            Player.Instance.Hurt(attackPower);
         }
     }
 }

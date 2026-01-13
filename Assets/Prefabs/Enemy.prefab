@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   minGroundNormalY: 0.65
   gravityModifier: 1
+  health: 100
   maxSpeed: 2
   direction: -1
   attackPower: 1
@@ -115,7 +116,10 @@ MonoBehaviour:
     m_Bits: 65
   rayCastOffset: {x: 1, y: 0}
   rayCastLength: 0.7
-  health: 100
+  hurtSound: {fileID: 8300000, guid: 827213ae71917459b9c9368275ce2059, type: 3}
+  deathSound: {fileID: 8300000, guid: cb41fc38591c64b1e94be801406e740f, type: 3}
+  hurtSoundVolume: 0.4
+  deathSoundVolume: 0.3
 --- !u!50 &1909542346906638802
 Rigidbody2D:
   serializedVersion: 5
