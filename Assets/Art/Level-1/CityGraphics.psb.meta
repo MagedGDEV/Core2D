@@ -405,16 +405,16 @@ ScriptedImporter:
     spritePosition: {x: 494, y: 1771}
   - name: Enemy
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 8013
-      y: 4141
+      y: 4142
       width: 92
-      height: 97
+      height: 96
     spriteID: bb849e448f8844418a83a8466945b197
     spriteBone: []
     spriteOutline: []

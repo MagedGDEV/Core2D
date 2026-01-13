@@ -13,6 +13,7 @@ public class Enemy : PhysicsObject
     [SerializeField] private RaycastHit2D leftWallRaycastHit;
     [SerializeField] private Vector2 rayCastOffset = new Vector2(1, 0);
     [SerializeField] private float rayCastLength = 2;
+    [SerializeField] private Animator animator;
 
     [Header("Sound Effects")]
     [SerializeField] private AudioClip hurtSound;
@@ -115,6 +116,7 @@ public class Enemy : PhysicsObject
 
     public void Hurt()
     {
+        animator.SetTrigger("hurt");
         Player.Instance.sfxAudioSource.PlayOneShot(hurtSound, hurtSoundVolume);
         health -= Player.Instance.attackPower;
     }

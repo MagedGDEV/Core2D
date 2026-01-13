@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3009051005541384398}
   - component: {fileID: 1909542346906638802}
   - component: {fileID: 957517562884160945}
+  - component: {fileID: 1929117115890908178}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -114,8 +115,9 @@ MonoBehaviour:
   rayCastLayerMask:
     serializedVersion: 2
     m_Bits: 65
-  rayCastOffset: {x: 1, y: 0}
+  rayCastOffset: {x: 1, y: 0.5}
   rayCastLength: 0.7
+  animator: {fileID: 1929117115890908178}
   hurtSound: {fileID: 8300000, guid: 827213ae71917459b9c9368275ce2059, type: 3}
   deathSound: {fileID: 8300000, guid: cb41fc38591c64b1e94be801406e740f, type: 3}
   hurtSoundVolume: 0.4
@@ -181,6 +183,28 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0014877319, y: 0.02989763}
-  m_Size: {x: 0.7423134, y: 1.0204526}
+  m_Offset: {x: 0, y: 0.50720024}
+  m_Size: {x: 0.7423134, y: 0.98605204}
   m_Direction: 0
+--- !u!95 &1929117115890908178
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081996342063600685}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a69fc777aaf4e4c48aef96d10783901b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
