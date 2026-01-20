@@ -2,6 +2,17 @@ using UnityEngine;
 
 public class AnimatorFunctions : MonoBehaviour
 {
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem particleSystem1;
+    [SerializeField] private int emitAmount1 = 0;
+    [SerializeField] private ParticleSystem particleSystem2;
+    [SerializeField] private int emitAmount2 = 0;
+    [SerializeField] private ParticleSystem particleSystem3;
+    [SerializeField] private int emitAmount3 = 0;
+
+
+    [Header("Sound Bank")]
     [SerializeField] private AudioClip[] sound1;
     [SerializeField] private float sound1Volume = 1.0f;
     [SerializeField] private AudioClip[] sound2;
@@ -71,5 +82,20 @@ public class AnimatorFunctions : MonoBehaviour
     void PlaySound10()
     {
         Player.Instance.sfxAudioSource.PlayOneShot(sound10[Random.Range(0,sound10.Length)], sound10Volume);
+    }
+
+    void EmitParticles1()
+    {
+        particleSystem1.Emit(emitAmount1);
+    }
+
+    void EmitParticles2()
+    {
+        particleSystem2.Emit(emitAmount2);
+    }
+
+    void EmitParticles3()
+    {
+        particleSystem3.Emit(emitAmount3);
     }
 }
