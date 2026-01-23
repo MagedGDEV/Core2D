@@ -7,13 +7,17 @@ public class Enemy : PhysicsObject
     [SerializeField] private int direction = 1;
     [SerializeField] private int attackPower = 1;
     [SerializeField] private LayerMask rayCastLayerMask;
+    [SerializeField] private Vector2 rayCastOffset = new Vector2(1, 0);
+    [SerializeField] private float rayCastLength = 2;
+    
+
+    [Header("References")]
     [SerializeField] private RaycastHit2D rightLedgeRaycastHit;
     [SerializeField] private RaycastHit2D rightWallRaycastHit;
     [SerializeField] private RaycastHit2D leftLedgeRaycastHit;
     [SerializeField] private RaycastHit2D leftWallRaycastHit;
-    [SerializeField] private Vector2 rayCastOffset = new Vector2(1, 0);
-    [SerializeField] private float rayCastLength = 2;
     [SerializeField] private Animator animator;
+    [SerializeField] private ParticleSystem particleEnemyExplosion;
 
     [Header("Sound Effects")]
     [SerializeField] private AudioClip hurtSound;
@@ -110,6 +114,9 @@ public class Enemy : PhysicsObject
         if (health <= 0)
         {
             Player.Instance.sfxAudioSource.PlayOneShot(deathSound, deathSoundVolume);
+            particleEnemyExplosion.transform.parent = null;
+            particleEnemyExplosion.gameObject.SetActive(true);
+            Destroy(particleEnemyExplosion.gameObject, particleEnemyExplosion.main.duration);
             Destroy(gameObject); 
         }
     }

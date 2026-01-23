@@ -9,13 +9,19 @@ public class Collectable : MonoBehaviour
     [SerializeField] private string inventoryName;
     [SerializeField] private AudioClip collectableSound;
     [SerializeField] private float collectableSoundVolume = 1;
+    [SerializeField] private ParticleSystem particleCollectableExplosion;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject == Player.Instance.gameObject)
         {
-            if (collectableSound != null) 
+            if (collectableSound != null)
                 Player.Instance.sfxAudioSource.PlayOneShot(collectableSound, collectableSoundVolume * Random.Range(0.8f, 1.4f));
+            
+            particleCollectableExplosion.transform.parent = null;
+            particleCollectableExplosion.gameObject.SetActive(true);
+            Destroy(particleCollectableExplosion.gameObject, particleCollectableExplosion.main.duration);
+
             switch (itemType)
             {
                 case ItemType.Coin:
