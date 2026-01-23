@@ -10,6 +10,8 @@ public class AnimatorFunctions : MonoBehaviour
     [SerializeField] private int emitAmount2 = 0;
     [SerializeField] private ParticleSystem particleSystem3;
     [SerializeField] private int emitAmount3 = 0;
+    [SerializeField] private ParticleSystem particleSystem4;
+    [SerializeField] private int emitAmount4 = 0;
 
 
     [Header("Sound Bank")]
@@ -97,5 +99,10 @@ public class AnimatorFunctions : MonoBehaviour
     void EmitParticles3()
     {
         particleSystem3.Emit(emitAmount3);
+    }
+
+    void EmitParticles4()
+    {
+        particleSystem4.Emit(emitAmount4);
     }
 }
